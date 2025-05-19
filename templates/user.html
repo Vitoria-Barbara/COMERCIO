@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - Usuário Logado</title>
+</head>
+<body>
+
+<header>
+    <h1>Bem-vindo, {{ username }}!</h1>
+    <nav>
+        <a href="{{ url_for('logout') }}">Sair (Logout)</a>
+    </nav>
+</header>
+
+<main>
+    <p>Você está logado no sistema.</p>
+    <!-- Aqui você pode colocar conteúdo específico para o usuário -->
+</main>
+
+<footer>
+    <p>&copy; 2023 Comercial 2 Irmaos - Vista Mar</p>
+</footer>
+
+</body>
+</html>

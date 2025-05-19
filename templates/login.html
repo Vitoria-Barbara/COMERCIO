@@ -6,19 +6,31 @@
     <title>Comercial 2 Irmaos - Vista Mar</title>
 </head>
 <body>
+
+     {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
     <header>
         <h1>Comercial 2 Irmaos - Vista Mar</h1>
         <!--<p>Tradição em vender barato</p>-->
         <nav>
-        <a href="index.html">Home</a>
-        <a href="login.html">Login</a>
-        <a href="register.html">Register</a>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('register') }}">Register</a>
+
         </nav>
     </header>
 
     <main>
         <h2>Faça seu login!</h2>
-        <form action="login.php" method="post">
+        <form action="{{ url_for('login') }}" method="post">
             <label for="username">Usuário:</label>
             <input type="text" id="username" name="username" required>
 
